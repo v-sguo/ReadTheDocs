@@ -1,7 +1,6 @@
 ﻿# Configuration file for the Sphinx documentation builder.
 
 # -- Project information
-import os
 
 project = 'ReadTheDocs'
 copyright = '2021, v-sguo'
@@ -12,25 +11,11 @@ version = '0.1.0'
 
 # -- General configuration
 
-on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
-if not on_rtd:  # only import and set the theme if we're building docs locally
-    import sphinx_rtd_theme
-    html_theme = 'sphinx_rtd_theme'
-    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
 html_context = {
 "display_github": False, # Add 'Edit on Github' link instead of 'View page source'
 "last_updated": True,
 "commit": False,
 }
-
-# extensions = [
-#     'sphinx.ext.duration',
-#     'sphinx.ext.doctest',
-#     'sphinx.ext.autodoc',
-#     'sphinx.ext.autosummary',
-#     'sphinx.ext.intersphinx',
-# ]
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
