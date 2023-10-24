@@ -2,7 +2,7 @@
 
 # -- Project information
 
-project = 'Lumache'
+project = 'ReadTheDocs'
 copyright = '2021, v-sguo'
 author = 'v-sguo'
 
