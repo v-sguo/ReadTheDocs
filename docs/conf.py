@@ -1,37 +1,34 @@
-﻿# Configuration file for the Sphinx documentation builder.
+﻿# -- Project information -----------------------------------------------------
 
-# -- Project information
-import os
+project = 'Basic Sphinx Example Project'
+copyright = '2022, Read the Docs core team'
+author = 'Read the Docs core team'
 
+# -- General configuration ---------------------------------------------------
 
-# on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
-on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+extensions = [
+    'sphinx.ext.duration',
+    'sphinx.ext.doctest',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.intersphinx',
+]
 
-if not on_rtd:  # only import and set the theme if we're building docs locally
-    import sphinx_rtd_theme
-    html_theme = 'sphinx_rtd_theme'
-    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
-project = 'ReadTheDocs'
-copyright = '2021, v-sguo'
-author = 'v-sguo'
-
-release = '0.1'
-version = '0.1.0'
-
-# -- General configuration
 
 intersphinx_mapping = {
+    'rtd': ('https://docs.readthedocs.io/en/stable/', None),
     'python': ('https://docs.python.org/3/', None),
     'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
 }
+
+
 intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
 
-# -- Options for HTML output
-
-html_theme = 'sphinx_rtd_theme'
-
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+
+# List of patterns, relative to source directory, that match files and
+# directories to ignore when looking for source files.
+exclude_patterns = []
