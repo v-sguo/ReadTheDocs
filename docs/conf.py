@@ -17,13 +17,13 @@ html_context = {
 "commit": False,
 }
 
-extensions = [
-    'sphinx.ext.duration',
-    'sphinx.ext.doctest',
-    'sphinx.ext.autodoc',
-    'sphinx.ext.autosummary',
-    'sphinx.ext.intersphinx',
-]
+# extensions = [
+#     'sphinx.ext.duration',
+#     'sphinx.ext.doctest',
+#     'sphinx.ext.autodoc',
+#     'sphinx.ext.autosummary',
+#     'sphinx.ext.intersphinx',
+# ]
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
