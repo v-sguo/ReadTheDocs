@@ -20,8 +20,8 @@ extensions = [
 ]
 
 html_context = {
-    "display_github": False, # 是否显示编辑按钮
-    "display_bitbucket": False, # 是否显示Bitbucket链接
+    "display_github": True, # 是否显示编辑按钮
+    "display_bitbucket": True, # 是否显示Bitbucket链接
     "display_gitlab": False, # 是否显示GitLab链接
     "display_toc": False, # 是否显示目录
     "collapse_navigation": False, # 是否折叠导航
