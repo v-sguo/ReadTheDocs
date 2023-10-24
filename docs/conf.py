@@ -1,7 +1,6 @@
 ﻿# Configuration file for the Sphinx documentation builder.
 
 # -- Project information
-import sys
 import os
 
 
@@ -21,12 +20,6 @@ release = '0.1'
 version = '0.1.0'
 
 # -- General configuration
-
-html_context = {
-"display_github": False, # Add 'Edit on Github' link instead of 'View page source'
-"last_updated": True,
-"commit": False,
-}
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
