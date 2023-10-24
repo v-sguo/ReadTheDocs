@@ -1,15 +1,15 @@
-﻿# -- Project information -----------------------------------------------------
+﻿﻿# Configuration file for the Sphinx documentation builder.
 
-project = 'Basic Sphinx Example Project'
-copyright = '2022, Read the Docs core team'
-author = 'Read the Docs core team'
+# -- Project information
 
-# -- General configuration ---------------------------------------------------
-html_context = {
-"display_github": False, # Add 'Edit on Github' link instead of 'View page source'
-"last_updated": True,
-"commit": False,
-}
+project = 'ReadTheDocs'
+copyright = '2021, v-sguo'
+author = 'v-sguo'
+
+release = '0.1'
+version = '0.1.0'
+
+# -- General configuration
 
 extensions = [
     'sphinx.ext.duration',
@@ -20,18 +20,16 @@ extensions = [
 ]
 
 intersphinx_mapping = {
-    'rtd': ('https://docs.readthedocs.io/en/stable/', None),
     'python': ('https://docs.python.org/3/', None),
     'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
 }
-
 intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
 
+# -- Options for HTML output
+
+html_theme = 'sphinx_rtd_theme'
+
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
-
-# List of patterns, relative to source directory, that match files and
-# directories to ignore when looking for source files.
-exclude_patterns = []
