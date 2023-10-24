@@ -5,6 +5,11 @@ copyright = '2022, Read the Docs core team'
 author = 'Read the Docs core team'
 
 # -- General configuration ---------------------------------------------------
+html_context = {
+"display_github": False, # Add 'Edit on Github' link instead of 'View page source'
+"last_updated": True,
+"commit": False,
+}
 
 extensions = [
     'sphinx.ext.duration',
@@ -14,13 +19,11 @@ extensions = [
     'sphinx.ext.intersphinx',
 ]
 
-
 intersphinx_mapping = {
     'rtd': ('https://docs.readthedocs.io/en/stable/', None),
     'python': ('https://docs.python.org/3/', None),
     'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
 }
-
 
 intersphinx_disabled_domains = ['std']
 

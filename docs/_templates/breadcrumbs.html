@@ -1,19 +1,19 @@
 {%- if meta is defined and meta is not none %}
-   {%- set check_meta = False %}
+   {%- set check_meta = True %}
 {%- else %}
    {%- set check_meta = False %}
 {%- endif %}
 
 {%- if check_meta and 'github_url' in meta %}
-   {%- set display_github = False %}
+   {%- set display_github = True %}
 {%- endif %}
 
 {%- if check_meta and 'bitbucket_url' in meta %}
-   {%- set display_bitbucket = False %}
+   {%- set display_bitbucket = True %}
 {%- endif %}
 
 {%- if check_meta and 'gitlab_url' in meta %}
-   {%- set display_gitlab = False %}
+   {%- set display_gitlab = True %}
 {%- endif %}
 
 {%- set display_vcs_links = display_vcs_links if display_vcs_links is defined else True %}
