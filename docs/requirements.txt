@@ -2,3 +2,4 @@
 sphinx-rtd-theme
 myst-parser
 pydoc-markdown
+GitPython
