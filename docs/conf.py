@@ -28,7 +28,7 @@ html_theme = 'alabaster'
 html_static_path = ['_static']
 
 html_context = {
-    "display_github": False,  # 不显示 'Edit on Github' 链接，而是显示 'View page source'
+    "display_github": True,  # 不显示 'Edit on Github' 链接，而是显示 'View page source'
     "last_updated": True,
     "commit": False,
 }
