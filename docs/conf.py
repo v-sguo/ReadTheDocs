@@ -2,9 +2,6 @@
 copyright = '2021, v-sguo'
 author = 'v-sguo'
 
-release = '0.1'
-version = '0.1.0'
-
 # -- General configuration
 
 html_context = {
