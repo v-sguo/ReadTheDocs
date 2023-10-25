@@ -12,6 +12,12 @@ extensions = [
     'sphinx.ext.intersphinx',
 ]
 
+html_context = {
+"display_github": False, # Add 'Edit on Github' link instead of 'View page source'
+"last_updated": True,
+"commit": False,
+}
+
 intersphinx_mapping = {
     'rtd': ('https://docs.readthedocs.io/en/stable/', None),
     'python': ('https://docs.python.org/3/', None),
