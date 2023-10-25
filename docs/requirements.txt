@@ -2,9 +2,3 @@
 sphinx-rtd-theme
 myst-parser
 pydoc-markdown
-GitPython
-recommonmark
-sphinx_fontawesome
-marshmallow
-setuptools
-amlt
