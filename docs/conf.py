@@ -1,6 +1,4 @@
-﻿﻿# Configuration file for the Sphinx documentation builder.
-
-# -- Project information
+﻿# -- Project information
 
 project = 'ReadTheDocs'
 copyright = '2021, v-sguo'
