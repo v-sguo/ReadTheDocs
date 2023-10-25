@@ -259,14 +259,14 @@ def get_versions():
   for tag in tags:
     # micro = tag.micro if hasattr(tag, "micro") else 0
     latest_patch[(tag.major, tag.minor)] = (tag.micro, tag.post)
-  last_released_version = [t for t in tags if not t.is_prerelease][-1]
-  tags = [
-    t
-    for t in tags
-    if (t.micro, t.post) == latest_patch[(t.major, t.minor)]
-    and (t.major, t.minor) >= (8, 2)
-  ]
-  return list(f"v{t}" for t in tags), f"v{last_released_version}"
+#   last_released_version = [t for t in tags if not t.is_prerelease][-1]
+#   tags = [
+#     t
+#     for t in tags
+#     if (t.micro, t.post) == latest_patch[(t.major, t.minor)]
+#     and (t.major, t.minor) >= (8, 2)
+#   ]
+  return list(f"v{t}" for t in tags), f"v{1.2}"
 
 
 # -- Options for sphinxcontrib versioning
