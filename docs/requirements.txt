@@ -2,9 +2,3 @@
 sphinx-rtd-theme
 myst-parser
 pydoc-markdown
-git
-docutils
-packaging
-sphinx.util
-pkg_resources
-sphinx_fontawesome
