@@ -28,6 +28,18 @@ html_theme_options = {
   "style_nav_header_background": "#151033",
 }
 
+html_static_path = ["_static"]
+
+html_sidebars = {
+  "**": [
+    "about.html",
+    "navigation.html",
+    "relations.html",  # needs 'show_related': True theme option to display
+    "searchbox.html",
+    "donate.html",
+  ]
+}
+
 # -- Options for HTML output
 html_theme = 'sphinx_rtd_theme'
 
