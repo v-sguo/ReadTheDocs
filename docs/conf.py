@@ -80,10 +80,10 @@ nitpick_ignore = [
 ]
 
 # version_without_dev = __version__.partition(".dev")[0]
-rst_prolog = f"""
-# .. |nightly_version| replace:: {version_without_dev}.dev0
-.. |amulet| replace:: Amulet
-"""
+# rst_prolog = f"""
+# # .. |nightly_version| replace:: {version_without_dev}.dev0
+# .. |amulet| replace:: Amulet
+# """
 
 set_type_checking_flag = True
 
