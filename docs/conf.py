@@ -50,13 +50,15 @@ html_favicon = "_static/amlt-logo2021.ico"
 html_static_path = ["_static"]
 html_sidebars = {
   "**": [
-    "about.html",
-    "navigation.html",
-    "relations.html",  # needs 'show_related': True theme option to display
-    "searchbox.html",
-    "donate.html",
+    # "about.html",
+    # "navigation.html",
+    # "relations.html",  # needs 'show_related': True theme option to display
+    # "searchbox.html",
+    # "donate.html",
   ]
 }
+
+
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
