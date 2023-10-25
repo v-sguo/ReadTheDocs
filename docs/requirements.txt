@@ -7,3 +7,4 @@ recommonmark
 sphinx_fontawesome
 marshmallow
 setuptools
+amlt
