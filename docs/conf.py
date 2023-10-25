@@ -42,7 +42,7 @@ sys.path.insert(0, os.path.abspath(".."))
 from pkg_resources import get_distribution
 from recommonmark.transform import AutoStructify
 
-__version__ = get_distribution("amlt").version
+# __version__ = get_distribution("amlt").version
 import sphinx_fontawesome
 
 extensions = [  # 'sphinx.ext.autodoc',
@@ -56,7 +56,7 @@ extensions = [  # 'sphinx.ext.autodoc',
   "sphinx_click.ext",
   # 'sphinx.ext.coverage',
   "sphinx.ext.mathjax",
-  "sphinx_multiversion",
+#   "sphinx_multiversion",
   "sphinx_tabs.tabs",
   "sphinx-prompt",
   "sphinx_substitution_extensions",
@@ -79,9 +79,9 @@ nitpick_ignore = [
   ("py:class", "NoneType"),
 ]
 
-version_without_dev = __version__.partition(".dev")[0]
+# version_without_dev = __version__.partition(".dev")[0]
 rst_prolog = f"""
-.. |nightly_version| replace:: {version_without_dev}.dev0
+# .. |nightly_version| replace:: {version_without_dev}.dev0
 .. |amulet| replace:: Amulet
 """
 
@@ -109,7 +109,7 @@ author = "Microsoft"
 # built documents.
 #
 # The short X.Y version.
-version = __version__
+# version = __version__
 # The full version, including alpha/beta/rc tags.
 release = ""
 
@@ -144,7 +144,7 @@ html_theme = "sphinx_rtd_theme"
 # documentation.
 #
 html_theme_options = {
-  "display_version": False,
+#   "display_version": False,
   "logo_only": True,
   "style_nav_header_background": "#151033",
 }
@@ -226,67 +226,67 @@ texinfo_documents = [
 ]
 
 
-def get_versions():
-  """
-  returns
-  - the list of versions to be built (only latest patch version for each unique (major/minor) version).
-  - the latest released version (i.e. no release candidates)
-  """
-  try:
-    repo = git.Repo("..")
-  except Exception:
-    return None, None
-  latest_patch = dict()
-  tags = []
-  for tag in git.tag.TagReference.list_items(repo):
-    tag = str(tag)
-    tag_version = pversion.parse(tag)
-    if isinstance(tag_version, pversion.LegacyVersion):
-      continue
-    tags.append(tag_version)
-  tags = sorted(tags)
-  for tag in tags:
-    # micro = tag.micro if hasattr(tag, "micro") else 0
-    latest_patch[(tag.major, tag.minor)] = (tag.micro, tag.post)
-  last_released_version = [t for t in tags if not t.is_prerelease][-1]
-  tags = [
-    t
-    for t in tags
-    if (t.micro, t.post) == latest_patch[(t.major, t.minor)]
-    and (t.major, t.minor) >= (8, 2)
-  ]
-  return list(f"v{t}" for t in tags), f"v{last_released_version}"
+# def get_versions():
+#   """
+#   returns
+#   - the list of versions to be built (only latest patch version for each unique (major/minor) version).
+#   - the latest released version (i.e. no release candidates)
+#   """
+#   try:
+#     repo = git.Repo("..")
+#   except Exception:
+#     return None, None
+#   latest_patch = dict()
+#   tags = []
+#   for tag in git.tag.TagReference.list_items(repo):
+#     tag = str(tag)
+#     tag_version = pversion.parse(tag)
+#     if isinstance(tag_version, pversion.LegacyVersion):
+#       continue
+#     tags.append(tag_version)
+#   tags = sorted(tags)
+#   for tag in tags:
+#     # micro = tag.micro if hasattr(tag, "micro") else 0
+#     latest_patch[(tag.major, tag.minor)] = (tag.micro, tag.post)
+#   last_released_version = [t for t in tags if not t.is_prerelease][-1]
+#   tags = [
+#     t
+#     for t in tags
+#     if (t.micro, t.post) == latest_patch[(t.major, t.minor)]
+#     and (t.major, t.minor) >= (8, 2)
+#   ]
+#   return list(f"v{t}" for t in tags), f"v{last_released_version}"
 
 
 # -- Options for sphinxcontrib versioning
 smv_show_banner = True
 smv_banner_greatest_tag = False
 
-tmp = get_versions()
-if tmp[0]:
-  print("VERSIONS: ", tmp)
-  smv_tag_whitelist = rf'^({"|".join(tmp[0])})$'
-smv_released_pattern = r"^tags/.*$"
-smv_branch_whitelist = r"^(main|sing/amlt8)$"
-smv_remote_whitelist = r"^.*$"
-smv_prefer_remote_refs = True
-smv_prebuild_command = "test -d amlt && sphinx-apidoc -MTP -o doc/api amlt || sphinx-apidoc -MTP -o doc/api phillytools"
+# tmp = get_versions()
+# if tmp[0]:
+#   print("VERSIONS: ", tmp)
+#   smv_tag_whitelist = rf'^({"|".join(tmp[0])})$'
+# smv_released_pattern = r"^tags/.*$"
+# smv_branch_whitelist = r"^(main|sing/amlt8)$"
+# smv_remote_whitelist = r"^.*$"
+# smv_prefer_remote_refs = True
+# smv_prebuild_command = "test -d amlt && sphinx-apidoc -MTP -o doc/api amlt || sphinx-apidoc -MTP -o doc/api phillytools"
 
 
-# ####### :numref: fallback ########
-# The following hook functions add some simple handling for the :numref:
-# directive for Sphinx versions prior to 1.3.1. The functions replace the
-# :numref: reference with a link to the target (for all Sphinx doc types).
-# It doesn't try to label figures/tables.
-def cluster_role(reftype, rawtext, text, lineno, inliner):
-  """
-  Add a Sphinx role to handle numref references. Note, we can't convert
-  the link here because the doctree isn't build and the target information
-  isn't available.
-  """
-  # Add an identifier to distinguish numref from other references.
-  newnode = nodes.reference(rawtext, text, refuri="_cluster_#%s" % text, internal=True)
-  return [newnode], []
+# # ####### :numref: fallback ########
+# # The following hook functions add some simple handling for the :numref:
+# # directive for Sphinx versions prior to 1.3.1. The functions replace the
+# # :numref: reference with a link to the target (for all Sphinx doc types).
+# # It doesn't try to label figures/tables.
+# def cluster_role(reftype, rawtext, text, lineno, inliner):
+#   """
+#   Add a Sphinx role to handle numref references. Note, we can't convert
+#   the link here because the doctree isn't build and the target information
+#   isn't available.
+#   """
+#   # Add an identifier to distinguish numref from other references.
+#   newnode = nodes.reference(rawtext, text, refuri="_cluster_#%s" % text, internal=True)
+#   return [newnode], []
 
 
 def process_cluster(app, doctree, from_docname):
