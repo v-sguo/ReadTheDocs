@@ -329,7 +329,7 @@ class FilterForIssue123(pylogging.Filter):
     return not record.getMessage().startswith("Cannot treat a function")
 
 
-logging.getLogger("sphinx_autodoc_typehints").logger.addFilter(FilterForIssue123())
+# logging.getLogger("sphinx_autodoc_typehints").logger.addFilter(FilterForIssue123())
 # End of a workaround
 
 
@@ -345,5 +345,5 @@ def setup(app):
   )
   app.add_transform(AutoStructify)
   app.add_css_file("custom.css")
-  app.add_role("cluster", cluster_role)
+#   app.add_role("cluster", cluster_role)
   app.connect("doctree-resolved", process_cluster)
