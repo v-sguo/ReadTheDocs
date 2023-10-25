@@ -17,32 +17,18 @@ release = '1.0.0'
 extensions = [
 ]
 
-
-intersphinx_mapping = {
-    'rtd': ('https://docs.readthedocs.io/en/stable/', None),
-    'python': ('https://docs.python.org/3/', None),
-    'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
-}
-# intersphinx_disabled_domains = ['std']
 templates_path = ['_templates']
 
 exclude_patterns = []
 
 # -- Options for HTML output -------------------------------------------------
 
-# html_theme = 'alabaster'
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'alabaster'
 
 html_static_path = ['_static']
 
-# html_context = {
-#     "display_github": False,  # 不显示 'Edit on Github' 链接，而是显示 'View page source'
-#     "last_updated": True,
-#     "commit": False,
-# }
-
-# # -- Options for EPUB output
-# epub_show_urls = 'footnote'
-# # List of patterns, relative to source directory, that match files and
-# # directories to ignore when looking for source files.
-# exclude_patterns = []
+html_context = {
+    "display_github": False,  # 不显示 'Edit on Github' 链接，而是显示 'View page source'
+    "last_updated": True,
+    "commit": False,
+}
