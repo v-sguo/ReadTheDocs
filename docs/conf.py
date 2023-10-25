@@ -12,12 +12,6 @@ extensions = [
     'sphinx.ext.intersphinx',
 ]
 
-# html_context = {
-# "display_github": False, # Add 'Edit on Github' link instead of 'View page source'
-# "last_updated": False,
-# "commit": False,
-# }
-
 intersphinx_mapping = {
     'rtd': ('https://docs.readthedocs.io/en/stable/', None),
     'python': ('https://docs.python.org/3/', None),
@@ -29,6 +23,12 @@ templates_path = ['_templates']
 
 # -- Options for HTML output
 html_theme = 'sphinx_rtd_theme'
+
+html_context = {
+"display_github": False, # Add 'Edit on Github' link instead of 'View page source'
+"last_updated": True,
+"commit": False,
+}
 
 html_theme_options = {
   "display_version": True,
