@@ -6,3 +6,4 @@ GitPython
 recommonmark
 sphinx_fontawesome
 marshmallow
+--reinstall python-pkg-resources
