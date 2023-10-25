@@ -35,11 +35,11 @@ html_theme = 'sphinx_rtd_theme'
 
 html_static_path = ['_static']
 
-html_context = {
-    "display_github": False,  # 不显示 'Edit on Github' 链接，而是显示 'View page source'
-    "last_updated": True,
-    "commit": False,
-}
+# html_context = {
+#     "display_github": False,  # 不显示 'Edit on Github' 链接，而是显示 'View page source'
+#     "last_updated": True,
+#     "commit": False,
+# }
 
 # # -- Options for EPUB output
 # epub_show_urls = 'footnote'
