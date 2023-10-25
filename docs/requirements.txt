@@ -6,4 +6,4 @@ GitPython
 recommonmark
 sphinx_fontawesome
 marshmallow
---upgrade setuptool
+setuptools
