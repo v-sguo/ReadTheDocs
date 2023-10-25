@@ -21,6 +21,13 @@ intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
 
+#
+html_theme_options = {
+  "display_version": False,
+  "logo_only": True,
+  "style_nav_header_background": "#151033",
+}
+
 # -- Options for HTML output
 html_theme = 'sphinx_rtd_theme'
 
