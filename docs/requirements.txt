@@ -9,3 +9,4 @@ sphinx_multiversion
 sphinx_tabs
 sphinx_substitution_extensions
 sphinx_togglebutton
+sphinx-prompt
