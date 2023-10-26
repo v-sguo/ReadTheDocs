@@ -1,4 +1,1 @@
-﻿sphinx
-sphinx-rtd-theme
-myst-parser
-pydoc-markdown
+sphinx>=7.1,<7.2

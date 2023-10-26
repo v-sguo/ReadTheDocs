@@ -1,54 +1,116 @@
-﻿# -- Project information
+# -*- coding: utf-8 -*-
 
-project = 'ReadTheDocs'
-copyright = '2021, v-sguo'
-author = 'v-sguo'
+import sys
+import os
+import re
 
-release = '0.1'
-version = '0.1.0'
+# Prefer to use the version of the theme in this repo
+# and not the installed version of the theme.
+sys.path.insert(0, os.path.abspath('..'))
+sys.path.append(os.path.abspath('./demo/'))
 
-# -- General configuration
+from sphinx_rtd_theme import __version__ as theme_version
+from sphinx_rtd_theme import __version_full__ as theme_version_full
+from sphinx.locale import _
+
+project = u'Read the Docs Sphinx Theme'
+slug = re.sub(r'\W+', '-', project.lower())
+version = theme_version
+release = theme_version_full
+author = u'Dave Snider, Read the Docs, Inc. & contributors'
+copyright = author
+language = 'en'
 
 extensions = [
-    'sphinx.ext.duration',
-    'sphinx.ext.doctest',
+    'sphinx.ext.intersphinx',
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
-    'sphinx.ext.intersphinx',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.viewcode',
+    'sphinx_rtd_theme',
 ]
 
+templates_path = ['_templates']
+source_suffix = '.rst'
+exclude_patterns = []
+locale_dirs = ['locale/']
+gettext_compact = False
+
+master_doc = 'index'
+suppress_warnings = ['image.nonlocal_uri']
+pygments_style = 'default'
+
+if sys.version_info < (3, 0):
+    tags.add("python2")
+else:
+    tags.add("python3")
+
 intersphinx_mapping = {
-    'python': ('https://docs.python.org/3/', None),
+    'rtd': ('https://docs.readthedocs.io/en/stable/', None),
+    'rtd-dev': ('https://dev.readthedocs.io/en/stable/', None),
     'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
 }
-intersphinx_disabled_domains = ['std']
-
-templates_path = ['_templates']
-
-# -- Options for HTML output
 
 html_theme = 'sphinx_rtd_theme'
-
-# Theme options are theme-specific and customize the look and feel of a theme
-# further.  For a list of options available for each theme, see the
-# documentation.
-#
 html_theme_options = {
-  "display_version": False,
-  "logo_only": True,
-  "style_nav_header_background": "#151033",
+    'logo_only': True,
+    'navigation_depth': 5,
 }
+html_context = {}
 
-# The name of an image file (relative to this directory) to place at the top
-# of the sidebar.
-#
-html_logo = "_static/amulet-logo2021.png"
+if not 'READTHEDOCS' in os.environ:
+    html_static_path = ['_static/']
+    html_js_files = ['debug.js']
 
-# The name of an image file (relative to this directory) to use as a favicon of
-# the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
-# pixels large.
-#
-html_favicon = "_static/amlt-logo2021.ico"
+    # Add fake versions for local QA of the menu
+    html_context['test_versions'] = list(map(
+        lambda x: str(x / 10),
+        range(1, 100)
+    ))
 
-# -- Options for EPUB output
-epub_show_urls = 'footnote'
+html_logo = "demo/static/logo-wordmark-light.svg"
+html_show_sourcelink = True
+html_favicon = "demo/static/favicon.ico"
+
+htmlhelp_basename = slug
+
+
+latex_documents = [
+  ('index', '{0}.tex'.format(slug), project, author, 'manual'),
+]
+
+man_pages = [
+    ('index', slug, project, [author], 1)
+]
+
+texinfo_documents = [
+  ('index', slug, project, author, slug, project, 'Miscellaneous'),
+]
+
+
+# Extensions to theme docs
+def setup(app):
+    from sphinx.domains.python import PyField
+    from sphinx.util.docfields import Field
+
+    app.add_object_type(
+        'confval',
+        'confval',
+        objname='configuration value',
+        indextemplate='pair: %s; configuration value',
+        doc_field_types=[
+            PyField(
+                'type',
+                label=_('Type'),
+                has_arg=False,
+                names=('type',),
+                bodyrolename='class'
+            ),
+            Field(
+                'default',
+                label=_('Default'),
+                has_arg=False,
+                names=('default',),
+            ),
+        ]
+    )
