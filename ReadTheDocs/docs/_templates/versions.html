@@ -17,8 +17,13 @@
 
     </div> -->
     <div>
-      <p>aa</p>
-      <p>bb</p>
+      <dl>
+        <dt>{{ _('Versions') }}</dt>
+        {% for slug, url in versions %}
+          <dd><a href="{{ url }}">{{ slug }}</a></dd>
+        {% endfor %}
+
+      </dl>
     </div>
 
   </div>
