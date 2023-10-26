@@ -10,3 +10,8 @@ sphinx_tabs
 sphinx_substitution_extensions
 sphinx_togglebutton
 sphinx-prompt
+logging
+docutils
+packaging
+recommonmark
+setuptools
