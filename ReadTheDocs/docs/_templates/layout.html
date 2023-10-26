@@ -88,12 +88,6 @@
     {%- endif %}
     <script src="{{ pathto('_static/js/theme.js', 1) }}"></script>
 
-    {#- OPENSEARCH #}
-    {%- if use_opensearch %}
-    <link rel="search" type="application/opensearchdescription+xml"
-          title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}"
-          href="{{ pathto('_static/opensearch.xml', 1) }}"/>
-    {%- endif %}
   {%- endif %}
   {%- endblock %}
 
