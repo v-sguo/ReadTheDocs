@@ -16,14 +16,14 @@
       </dl>
 
     </div> -->
-    <div>
-      <dl>
-        <dt>{{ _('Versions') }}</dt>
-        {% for slug, url in versions %}
-          <dd><a href="{{ url }}">{{ slug }}</a></dd>
-        {% endfor %}
+    <div class="rst-other-versions">
+        <dl>
+            <dt>{{ _('Versions') }}</dt>
+            {% for slug, url in versions %}
+            <dd><a href="{{ url }}">{{ slug }}</a></dd>
+            {% endfor %}
 
-      </dl>
+        </dl>
     </div>
 
   </div>
