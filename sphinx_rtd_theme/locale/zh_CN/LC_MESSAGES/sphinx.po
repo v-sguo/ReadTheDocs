@@ -181,8 +181,8 @@ msgstr "托管于 Read the Docs"
 
 #: sphinx_rtd_theme/versions.html:26
 msgid "Project Home"
-msgstr "项目主页AAA"
+msgstr "项目主"
 
 #: sphinx_rtd_theme/versions.html:29
 msgid "Builds"
-msgstr "构建AAA"
+msgstr "构"
