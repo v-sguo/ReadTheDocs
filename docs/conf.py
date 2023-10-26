@@ -10,11 +10,21 @@ version = '0.1.0'
 # -- General configuration
 
 extensions = [
-    'sphinx.ext.duration',
-    'sphinx.ext.doctest',
-    'sphinx.ext.autodoc',
-    'sphinx.ext.autosummary',
-    'sphinx.ext.intersphinx',
+  # 'sphinx.ext.doctest',
+  "sphinx.ext.viewcode",
+  "sphinx.ext.autodoc",
+  "sphinx.ext.napoleon",
+  "sphinx_autodoc_typehints",
+  "sphinx.ext.todo",
+  "sphinx_fontawesome",
+  "sphinx_click.ext",
+  # 'sphinx.ext.coverage',
+  "sphinx.ext.mathjax",
+  "sphinx_multiversion",
+  "sphinx_tabs.tabs",
+  "sphinx-prompt",
+  "sphinx_substitution_extensions",
+  "sphinx_togglebutton",
 ]
 
 intersphinx_mapping = {
@@ -27,7 +37,28 @@ intersphinx_disabled_domains = ['std']
 
 # -- Options for HTML output
 
-html_theme = 'sphinx_rtd_theme_v2'
+html_theme = "sphinx_rtd_theme"
+html_theme_options = {
+  "display_version": False,
+  "logo_only": True,
+  "style_nav_header_background": "#151033",
+}
+
+html_static_path = ["_static"]
+
+html_sidebars = {
+  "**": [
+    "about.html",
+    "navigation.html",
+    "relations.html",  # needs 'show_related': True theme option to display
+    "searchbox.html",
+    "donate.html",
+  ]
+}
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+
+# -- Options for sphinxcontrib versioning
+smv_show_banner = True
+smv_banner_greatest_tag = False
