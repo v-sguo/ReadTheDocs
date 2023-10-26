@@ -4,3 +4,4 @@ myst-parser
 pydoc-markdown
 sphinx_autodoc_typehints
 sphinx_fontawesome
+sphinx_click
