@@ -172,7 +172,7 @@ msgstr "版本"
 
 #: sphinx_rtd_theme/versions.html:17
 msgid "Downloads"
-msgstr ""
+msgstr "下载"
 
 #. The phrase "Read the Docs" is not translated
 #: sphinx_rtd_theme/versions.html:24
@@ -181,8 +181,8 @@ msgstr "托管于 Read the Docs"
 
 #: sphinx_rtd_theme/versions.html:26
 msgid "Project Home"
-msgstr ""
+msgstr "项目主页AAA"
 
 #: sphinx_rtd_theme/versions.html:29
 msgid "Builds"
-msgstr ""
+msgstr "构建AAA"
