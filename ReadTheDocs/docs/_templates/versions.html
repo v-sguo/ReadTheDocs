@@ -33,7 +33,7 @@
 
 <script>
   var oButton = document.getElementsByName("fa fa-caret-down");//假设HTML中按钮id="button"，并取得。
-  var oDiv = document.getElementById("rst-other-versions2");//假设HTML中div的id="div"，并取得。
+  var oDiv = document.getElementsByName("rst-other-versions2");//假设HTML中div的id="div"，并取得。
   oButton.onclick = function () {
     if (oDiv.style.display == "none") {
       oDiv.style.display = "block";
