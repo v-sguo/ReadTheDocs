@@ -50,7 +50,7 @@ html_sidebars = {
 }
 
 html_context = {
-    'tags':'aaaa'
+    'Tags':'Tags'
 }
 
 # -- Options for EPUB output
