@@ -31,5 +31,23 @@ templates_path = ['_templates']
 
 html_theme = 'sphinx_rtd_theme'
 
+html_theme_options = {
+  "display_version": False,
+  "logo_only": True,
+  "style_nav_header_background": "#151033",
+}
+
+html_static_path = ["_static"]
+
+html_sidebars = {
+  "**": [
+    "about.html",
+    "navigation.html",
+    "relations.html",  # needs 'show_related': True theme option to display
+    "searchbox.html",
+    "donate.html",
+  ]
+}
+
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
