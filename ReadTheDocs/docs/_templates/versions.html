@@ -1,12 +1,45 @@
+<style>
+  .rst-other-versions {
+    display: block
+  }
+
+  .rst-versions .rst-other-versions2 {
+    font-size: 90%;
+    padding: 12px;
+    color: grey;
+    display: none
+  }
+
+  .rst-versions .rst-other-versions2 hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    margin: 20px 0;
+    padding: 0;
+    border-top: 1px solid #413d3d
+  }
+
+  .rst-versions .rst-other-versions2 dd {
+    display: inline-block;
+    margin: 0
+  }
+
+  .rst-versions .rst-other-versions2 dd a {
+    display: inline-block;
+    padding: 6px;
+    color: #fcfcfc
+  }
+</style>
+
 {% if READTHEDOCS %}
 {# Add rst-badge after rst-versions for small badge style. #}
-  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="{{ _('Versions') }}">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      <span class="fa fa-book"> Other Versions </span>
-      v: {{ current_version }}
-      <span class="fa fa-caret-down"></span>
-    </span>
-    <!-- <div class="rst-other-versions">
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="{{ _('Versions') }}">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions </span>
+    v: {{ current_version }}
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <!-- <div class="rst-other-versions">
       <dl>
         <dt>{{ _('Versions') }}</dt>
         {% for slug, url in versions %}
@@ -16,19 +49,20 @@
       </dl>
 
     </div> -->
-    <!--  -->
-    <div class="rst-other-versions">
-        <dl>
-            <dt>{{ _('Versions') }}</dt>
-            {% for slug, url in versions %}
-            <!-- style="display: inline-block; margin: 0;" -->
-            <dd>
-              <!-- style="display: inline-block; padding: 6px; color: #fcfcfc;" -->
-              <a href="{{ url }}">{{ slug }}</a></dd>
-            {% endfor %}
+  <!--  -->
+  <div class="rst-other-versions2">
+    <dl>
+      <dt>{{ _('Versions') }}</dt>
+      {% for slug, url in versions %}
+      <!-- style="display: inline-block; margin: 0;" -->
+      <dd>
+        <!-- style="display: inline-block; padding: 6px; color: #fcfcfc;" -->
+        <a href="{{ url }}">{{ slug }}</a>
+      </dd>
+      {% endfor %}
 
-        </dl>
-    </div>
-
+    </dl>
   </div>
+
+</div>
 {% endif %}
