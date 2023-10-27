@@ -1,55 +1,10 @@
-<style>
-  .rst-other-versions {
-    display: block
-  }
-
-  .rst-versions .rst-other-versions2 {
-    font-size: 90%;
-    padding: 12px;
-    color: grey;
-    display: none
-  }
-
-  .rst-versions .rst-other-versions2 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    margin: 20px 0;
-    padding: 0;
-    border-top: 1px solid #413d3d
-  }
-
-  .rst-versions .rst-other-versions2 dd {
-    display: inline-block;
-    margin: 0
-  }
-
-  .rst-versions .rst-other-versions2 dd a {
-    display: inline-block;
-    padding: 6px;
-    color: #fcfcfc
-  }
-</style>
-
-<script>
-  var oButton = document.getElementsByName("fa fa-caret-down");//假设HTML中按钮id="button"，并取得。
-  var oDiv = document.getElementsByName("rst-other-versions2");//假设HTML中div的id="div"，并取得。
-  oButton.onclick = function () {
-    if (oDiv.style.display == "none") {
-      oDiv.style.display = "block";
-    } else {
-      oDiv.style.display = "none";
-    }
-  }
-</script>
-
 {% if READTHEDOCS %}
 {# Add rst-badge after rst-versions for small badge style. #}
 <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="{{ _('Versions') }}">
   <span class="rst-current-version" data-toggle="rst-current-version">
     <span class="fa fa-book"> Other Versions </span>
     v: {{ current_version }}
-    <span name="fa fa-caret-down" class="fa fa-caret-down"></span>
+    <span id="fa fa-caret-down" class="fa fa-caret-down"></span>
   </span>
   <!-- <div class="rst-other-versions">
       <dl>
@@ -62,7 +17,7 @@
 
     </div> -->
   <!--  -->
-  <div name="rst-other-versions2" class="rst-other-versions2">
+  <div class="rst-other-versions">
     <dl>
       <dt>{{ _('Versions') }}</dt>
       {% for slug, url in versions %}
