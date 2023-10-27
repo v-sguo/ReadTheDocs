@@ -19,7 +19,38 @@
   <!--  -->
   <div class="rst-other-versions">
     <dl>
-      <dt>{{ _('Versions') }}</dt>
+      <dt>Versions1</dt>
+      {% for slug, url in versions %}
+      <!-- style="display: inline-block; margin: 0;" -->
+      <dd>
+        <!-- style="display: inline-block; padding: 6px; color: #fcfcfc;" -->
+        <a href="{{ url }}">{{ slug }}</a>
+      </dd>
+      {% endfor %}
+
+    </dl>
+    <dl>
+      <dt>Versions2</dt>
+      {% for slug, url in versions %}
+      <!-- style="display: inline-block; margin: 0;" -->
+      <dd>
+        <!-- style="display: inline-block; padding: 6px; color: #fcfcfc;" -->
+        <a href="{{ url }}">{{ slug }}</a>
+      </dd>
+      {% endfor %}
+
+    </dl>    <dl>
+      <dt>Versions3</dt>
+      {% for slug, url in versions %}
+      <!-- style="display: inline-block; margin: 0;" -->
+      <dd>
+        <!-- style="display: inline-block; padding: 6px; color: #fcfcfc;" -->
+        <a href="{{ url }}">{{ slug }}</a>
+      </dd>
+      {% endfor %}
+
+    </dl>    <dl>
+      <dt>Versions4</dt>
       {% for slug, url in versions %}
       <!-- style="display: inline-block; margin: 0;" -->
       <dd>
