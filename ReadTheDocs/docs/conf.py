@@ -49,5 +49,9 @@ html_sidebars = {
   ]
 }
 
+html_context = {
+    'tags':'aaaa'
+}
+
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
