@@ -12,6 +12,7 @@ version = '0.1.0'
 # -- General configuration
 
 extensions = [
+    'sphinx_multiversion',
     'sphinx.ext.duration',
     'sphinx.ext.doctest',
     'sphinx.ext.autodoc',
@@ -25,7 +26,15 @@ intersphinx_mapping = {
 }
 intersphinx_disabled_domains = ['std']
 
-templates_path = ['_templates']
+templates_path = [
+    "_templates",
+]
+
+html_sidebars = {
+    '**': [
+        'versioning.html',
+    ],
+}
 
 # -- Options for HTML output
 
@@ -39,19 +48,6 @@ html_theme_options = {
 
 html_static_path = ["_static"]
 
-html_sidebars = {
-  "**": [
-    "about.html",
-    "navigation.html",
-    "relations.html",  # needs 'show_related': True theme option to display
-    "searchbox.html",
-    "donate.html",
-  ]
-}
-
 html_context = {
     'Tags':'Tags'
 }
-
-# -- Options for EPUB output
-epub_show_urls = 'footnote'
